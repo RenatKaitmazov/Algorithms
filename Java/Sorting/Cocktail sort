@@ -1,0 +1,42 @@
+public class CocktailSort {
+    private CocktailSort() {}
+
+    /********************* Helper methods *****************************/
+    private static void swap(int i , int j, int[] arr) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    public static boolean isSorted(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++)
+            if (arr[i] > arr[i + 1])
+                return false;
+        return true;
+    }
+    ////////////////////////////////////////////////////////////////////
+
+    /********************* Interface **********************************/
+    public static void sort(int[] arr) {
+        int k;
+        int i = 0, j = arr.length - 1;
+        while (j > i) {
+            for (k = i; k < j; k++)
+                if (arr[k] > arr[k + 1])
+                    swap(k, k + 1, arr);
+            j--;
+
+            for (k = j; k > i; k--)
+                if (arr[k] < arr[k - 1])
+                    swap(k, k - 1, arr);
+            i++;
+        }
+    }
+
+    public static void display(int[] arr) {
+        for (int i: arr)
+            System.out.printf("%d ", i);
+        System.out.println();
+    }
+    ////////////////////////////////////////////////////////////////////
+}
