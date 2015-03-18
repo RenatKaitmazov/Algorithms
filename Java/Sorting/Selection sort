@@ -1,0 +1,42 @@
+public class SelectionSort {
+    private SelectionSort() {}
+
+    /********************* Helper methods *****************************/
+    private static void swap(int i , int j, int[] arr) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    public static boolean isSorted(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++)
+            if (arr[i] > arr[i + 1])
+                return false;
+        return true;
+    }
+    ////////////////////////////////////////////////////////////////////
+
+    /********************* Interface **********************************/
+    public static void sort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            //We assume that an element at index i is the smallest one in the array
+            int minIndex = i;
+            //To make sure we go through the array starting at index i + 1
+            for (int j = i + 1; j < arr.length; j++) {
+                //If we find an element less than the element at index i, we will change minIndex to the index of the newly found element
+                if (arr[j] < arr[minIndex])
+                    minIndex = j;
+            }
+            //We swap elements only if a smaller element has been found
+            if (minIndex != i)
+                swap(i, minIndex, arr);
+        }
+    }
+
+    public static void display(int[] arr) {
+        for (int i: arr)
+            System.out.printf("%d ", i);
+        System.out.println();
+    }
+    ////////////////////////////////////////////////////////////////////
+}
