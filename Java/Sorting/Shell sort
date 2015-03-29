@@ -1,43 +1,48 @@
 public class ShellSort {
     private ShellSort() {}
 
-    /********************* Helper methods *****************************/
-    private static void swap(int i , int j, int[] arr) {
-        int temp = arr[i];
+    /********************* HELPER METHODS *********************/
+    private static <T> void swap(int i, int j, T[] arr) {
+        T temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
-    public static boolean isSorted(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++)
-            if (arr[i] > arr[i + 1])
+    public static <T extends Comparable> void display(T[] arr) {
+        for (int i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+
+    public static <T extends Comparable> boolean isSorted(T[] arr) {
+        for (int i = 1; i < arr.length; i++)
+            if (arr[i - 1].compareTo(arr[i]) > 0)
                 return false;
         return true;
     }
-    ////////////////////////////////////////////////////////////////////
 
-    /********************* Interface **********************************/
-    public static void sort(int[] arr) {
+    /*-------------------------------------------------------*/
+
+    /*********************** INTERFACE *************************/
+
+    public static<T extends Comparable> void shellSort(T[] arr) {
         int pace = arr.length / 2;
         while (pace > 0) {
             for (int i = pace; i < arr.length; i++) {
-                int key = arr[i];
-                int j = i - pace;
-                while (j >= 0 && arr[j] > key) {
-                    arr[j + pace] = arr[j];
+                T key = arr[i];
+                int j = i;
+                while (j >= pace && arr[j - pace].compareTo(key) > 0) {
+                    arr[j] = arr[j - pace];
                     j -= pace;
                 }
-                if (j != i - pace) arr[j + pace] = key;
+                if (j != i)
+                    arr[j] = key;
             }
-            if (pace == 2) pace = 1;
-            pace /= 2;
+
+            if (pace == 2)
+                pace = 1;
+            else
+                pace /= 2;
         }
     }
-
-    public static void display(int[] arr) {
-        for (int i: arr)
-            System.out.printf("%d ", i);
-        System.out.println();
-    }
-    ////////////////////////////////////////////////////////////////////
 }
