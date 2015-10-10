@@ -5,7 +5,7 @@ public final class Eratosthenes {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter upper bound");
         int upperBound = scanner.nextInt();
-        if (upperBound < 2) throw new IllegalArgumentException("Number must be greater than two");
+        if (upperBound < 2) throw new IllegalArgumentException("Number must be greater than or equal to two");
 
         // Create an array of numbers from 2 to the upper bound
         int[] numbers = new int[upperBound - 1];
