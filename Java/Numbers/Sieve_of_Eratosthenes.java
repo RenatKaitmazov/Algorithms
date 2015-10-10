@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public final class Eratosthenes {
 
     public static void calculate() {
@@ -15,15 +17,13 @@ public final class Eratosthenes {
 
         // Find prime numbers
         for (int i = 0; numbers[i] * numbers[i] <= upperBound; i++) {
-            int powIndex = numbers[i] * numbers[i] - 2;
-            if (numbers[i] == 0) continue;
+            int notPrime = numbers[i] * numbers[i] - 2;
 
-            int notPrimeIndex = powIndex;
-
-            while (notPrimeIndex < numbers.length) {
-                numbers[notPrimeIndex] = 0;
-                notPrimeIndex += numbers[i];
+            while (notPrime < numbers.length) {
+                numbers[notPrime] = 0;
+                notPrime += numbers[i];
             }
+            while (numbers[i + 1] == 0) i++;
         }
 
         // Print out all the prime numbers found
