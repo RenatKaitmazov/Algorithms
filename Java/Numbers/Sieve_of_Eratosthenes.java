@@ -10,16 +10,15 @@ public final class Eratosthenes {
         if (upperBound < 2) throw new IllegalArgumentException("Number must be greater than or equal to two");
 
         // Create an array of numbers from 2 to the upper bound
-        int[] numbers = new int[upperBound - 1];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = i + 2;
-        }
+        int size = upperBound - 1;
+        int[] numbers = new int[size];
+        for (int i = 0; i < size; i++) numbers[i] = i + 2;
 
         // Find prime numbers
         for (int i = 0; numbers[i] * numbers[i] <= upperBound; i++) {
             int notPrime = numbers[i] * numbers[i] - 2;
 
-            while (notPrime < numbers.length) {
+            while (notPrime < size) {
                 numbers[notPrime] = 0;
                 notPrime += numbers[i];
             }
