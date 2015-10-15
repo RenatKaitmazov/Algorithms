@@ -17,11 +17,7 @@ public final class Eratosthenes {
         // Find prime numbers
         for (int i = 0; numbers[i] * numbers[i] <= upperBound; i++) {
             int notPrime = numbers[i] * numbers[i] - 2;
-
-            while (notPrime < size) {
-                numbers[notPrime] = 0;
-                notPrime += numbers[i];
-            }
+            while (notPrime < size) { numbers[notPrime] = 0; notPrime += numbers[i]; }
             while (numbers[i + 1] == 0) i++;
         }
 
