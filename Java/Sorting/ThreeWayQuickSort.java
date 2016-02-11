@@ -1,6 +1,6 @@
 public class ThreeWayQuickSort {
 
-    private QuickSort() {}
+    private ThreeWayQuickSort() {}
 
     /********************* HELPER METHODS **********************/
     private static <T extends Comparable> void swap(int i, int j, T[] arr) {
