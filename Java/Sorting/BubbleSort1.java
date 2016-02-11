@@ -1,4 +1,4 @@
-public class BubbleSort {
+public class BubbleSort1 {
     private BubbleSort() {}
 
     /********************* HELPER METHODS *********************/
