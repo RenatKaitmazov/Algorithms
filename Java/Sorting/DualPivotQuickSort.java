@@ -1,6 +1,6 @@
 public class QuickSort {
 
-    private QuickSort() {}
+    private DualPivotQuickSort() {}
 
     /********************* HELPER METHODS **********************/
     private static <T extends Comparable> void swap(int i, int j, T[] arr) {
