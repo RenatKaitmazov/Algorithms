@@ -1,4 +1,4 @@
-public class QuickSort {
+public class DualPivotQuickSort {
 
     private DualPivotQuickSort() {}
 
