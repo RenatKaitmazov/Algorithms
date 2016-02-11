@@ -1,4 +1,4 @@
-public class QuickSort {
+public class ThreeWayQuickSort {
 
     private QuickSort() {}
 
