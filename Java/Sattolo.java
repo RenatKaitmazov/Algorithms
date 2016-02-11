@@ -1,4 +1,4 @@
-public final class Sattolo<T> {
+public final class Sattolo {
     public static <T> T[] cycle(T[] arr) {
         int n = arr.length - 1;
 
