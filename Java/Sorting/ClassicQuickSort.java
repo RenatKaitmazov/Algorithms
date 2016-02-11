@@ -1,5 +1,5 @@
 
-public class QuickSort {
+public class ClassicQuickSort {
   
     private QuickSort() {}
 
