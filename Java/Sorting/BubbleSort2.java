@@ -2,7 +2,7 @@
  * Created by RenatKaitmazov on 24/03/15.
  */
 public class BubbleSort2 {
-    private BubbleSort() {}
+    private BubbleSort2() {}
 
     /********************* HELPER METHODS *********************/
     private static <T> void swap(int i, int j, T[] arr) {
