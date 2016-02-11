@@ -1,7 +1,7 @@
 /**
  * Created by RenatKaitmazov on 24/03/15.
  */
-public class BubbleSort {
+public class BubbleSort2 {
     private BubbleSort() {}
 
     /********************* HELPER METHODS *********************/
