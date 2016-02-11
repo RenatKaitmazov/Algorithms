@@ -1,7 +1,7 @@
 
 public class ClassicQuickSort {
   
-    private QuickSort() {}
+    private ClassicQuickSort() {}
 
     /********************* HELPER METHODS **********************/
     private static <T extends Comparable> void swap(int i, int j, T[] arr) {
