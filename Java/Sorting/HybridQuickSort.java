@@ -1,6 +1,6 @@
-public class QuickSort {
+public class HybridQuickSort {
     
-    private QuickSort() {}
+    private HybridQuickSort() {}
 
     /********************* HELPER METHODS **********************/
     private static <T extends Comparable> void swap(int i, int j, T[] arr) {
