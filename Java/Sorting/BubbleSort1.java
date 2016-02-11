@@ -1,5 +1,5 @@
 public class BubbleSort1 {
-    private BubbleSort() {}
+    private BubbleSort1() {}
 
     /********************* HELPER METHODS *********************/
     private static <T> void swap(int i, int j, T[] arr) {
